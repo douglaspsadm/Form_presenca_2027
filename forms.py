@@ -294,6 +294,7 @@ def mostrar_historico(participante):
 # ══════════════════════════════════════════════════════════════════
 
 def main():
+    st.image("logo.png", width=400)
     st.title("✅ Lista de Presença — XI ENCES")
 
     # Flag de proteção contra duplo clique
