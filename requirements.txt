@@ -1,0 +1,5 @@
+streamlit
+supabase
+pandas
+streamlit-js-eval
+pytz
