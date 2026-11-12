@@ -234,10 +234,12 @@ def get_ies_list():
     if lista_evento.empty:
         return []
     lista_evento = lista_evento.copy()
+    lista_evento['co_ies_int'] = lista_evento['co_ies'].astype(int)
+    lista_evento = lista_evento.sort_values('co_ies_int')
     lista_evento['ies_completo'] = (
-        lista_evento['co_ies'].astype(int).astype(str) + ' - ' + lista_evento['no_ies'].astype(str)
+        lista_evento['co_ies_int'].astype(str) + ' - ' + lista_evento['no_ies'].astype(str)
     )
-    return sorted(lista_evento['ies_completo'].unique())
+    return lista_evento['ies_completo'].unique().tolist()
 
 
 def get_participantes_ies(ies_selecionada):
